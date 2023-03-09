@@ -1,0 +1,23 @@
+function binary_search(a,l,h,key)
+{
+    if(l>=h)
+    {
+        return -1;
+    }
+    else
+    {
+        let mid=Math.floor((l+h)/2);
+        if(key==a[mid])
+        {
+            return mid;
+        }
+        else if(key<a[mid])
+        {
+            return binary_search(a,l,mid-1,key);
+        }
+        else if(key>a[mid])
+        {
+            return binary_search(a,mid+1,h,key);
+        }
+    }
+}
